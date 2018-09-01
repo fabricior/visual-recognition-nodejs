@@ -1,6 +1,6 @@
 var system = require('system');
 var apiKey = system.env.API_KEY;
-var baseHost = 'http://localhost:3000';
+var baseHost = 'http://localhost:4701';
 
 casper.start();
 
@@ -8,7 +8,7 @@ casper.thenBypassUnless(function() {
   return apiKey && apiKey.length > 0;
 }, 4);
 
-casper.thenOpen('http://localhost:3000', function(result) {
+casper.thenOpen('http://localhost:4701', function(result) {
   casper.test.assert(result.status === 200, 'Front page opens');
   casper.test.assertSelectorHasText('a.wordmark', 'IBMWatson Developer Cloud');
   testHeaderLinks();

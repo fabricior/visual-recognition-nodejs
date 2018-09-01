@@ -9,7 +9,7 @@ casper.thenBypassUnless(function() {
   return apiKey && apiKey.length > 0;
 }, 2);
 
-casper.thenOpen('http://localhost:3000/train', function(result) {
+casper.thenOpen('http://localhost:4701/train', function(result) {
   casper.test.assert(result.status === 200, 'Front page opens');
   casper.test.assertSelectorHasText('h1.base--h2.use--header', 'Train a demo classifier');
 
@@ -58,7 +58,7 @@ casper.thenOpen('http://localhost:3000/train', function(result) {
       this.sendKeys('input.test--url-input', 'https://watson-test-resources.mybluemix.net/resources/husky.jpg');
       this.sendKeys('input.test--url-input', casper.page.event.key.Enter);
     });
-    // casper.waitForResource('http://localhost:3000/api/classify');
+    // casper.waitForResource('http://localhost:4701/api/classify');
     casper.waitUntilVisible('.test--loading');
     casper.waitWhileVisible('.test--loading');
     casper.waitUntilVisible('.results-table', function() {
@@ -71,7 +71,7 @@ casper.thenOpen('http://localhost:3000/train', function(result) {
         'images_file': 'public/images/bundles/dogs/test/2.jpg'
       }, true);
     });
-    casper.waitForResource('http://localhost:3000/api/classify');
+    casper.waitForResource('http://localhost:4701/api/classify');
     casper.waitUntilVisible('.results-table', function() {
       casper.test.assertSelectorHasText('.results-table--container:first-child tbody .base--tr:first-child .base--td:first-child', 'Dalmatian');
     });

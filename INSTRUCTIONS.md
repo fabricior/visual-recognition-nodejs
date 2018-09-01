@@ -63,7 +63,7 @@ So let’s get started. The first thing to do is to build out the shell of our a
   npm start
   ```
 
-1. Test your application locally by going to: [http://localhost:3000/](http://localhost:3000/)
+1. Test your application locally by going to: [http://localhost:4701/](http://localhost:4701/)
 
 ## Deploying to IBM Cloud as a Cloud Foundry Application
 

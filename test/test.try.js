@@ -9,7 +9,7 @@ casper.thenBypassUnless(function() {
   return apiKey && apiKey.length > 0;
 }, 4);
 
-casper.thenOpen('http://localhost:3000', function(result) {
+casper.thenOpen('http://localhost:4701', function(result) {
   casper.test.assert(result.status === 200, 'Front page opens');
   casper.test.assertSelectorHasText('h2.base--h2.use--header', 'Try the service');
 
@@ -21,7 +21,7 @@ casper.thenOpen('http://localhost:3000', function(result) {
 });
 
 function testDemoImages() {
-  casper.thenOpen('http://localhost:3000', function() {
+  casper.thenOpen('http://localhost:4701', function() {
     // whoopi
     casper.then(function() {
       this.click('#use--image0_default');
@@ -41,7 +41,7 @@ function testDemoImages() {
       casper.test.assertSelectorHasText('.results-table--container:last-child table.results-table tbody .base--tr:nth-child(6) .base--td:first-child', 'people > women > celebrities > whoopi goldberg');
     });
   });
-  casper.thenOpen('http://localhost:3000', function() {
+  casper.thenOpen('http://localhost:4701', function() {
     // lego
     casper.then(function() {
       this.click('#use--image1_default');
@@ -59,7 +59,7 @@ function testDemoImages() {
       casper.test.assertSelectorHasText('.results-table--container:last-child tbody .base--tr:first-child .base--td:first-child', 'lego');
     });
   });
-  casper.thenOpen('http://localhost:3000', function() {
+  casper.thenOpen('http://localhost:4701', function() {
     // ladies
     casper.then(function() {
       this.click('#use--image2_default');
@@ -75,7 +75,7 @@ function testDemoImages() {
       casper.test.assertSelectorHasText('.results-table--container:last-child tbody .base--tr:nth-child(4) .base--td:first-child', 'age 18 - 24');
     });
   });
-  casper.thenOpen('http://localhost:3000', function() {
+  casper.thenOpen('http://localhost:4701', function() {
     // 6th Street Sign
     casper.then(function() {
       this.click('#use--image3_default');
@@ -96,7 +96,7 @@ function testDemoImages() {
 
 
 function testPastedDemoImage() {
-  casper.thenOpen('http://localhost:3000', function() {
+  casper.thenOpen('http://localhost:4701', function() {
     // pasted demo pic
     casper.then(function() {
       this.sendKeys('input.use--url-input', 'https://visual-recognition-demo.mybluemix.net/images/samples/3.jpg');
@@ -117,7 +117,7 @@ function testPastedDemoImage() {
 }
 
 function testUploadedImage() {
-  casper.thenOpen('http://localhost:3000', function() {
+  casper.thenOpen('http://localhost:4701', function() {
     // pasted demo pic
     this.fill('#use--fileupload', {
       'images_file': 'public/images/samples/1.jpg'

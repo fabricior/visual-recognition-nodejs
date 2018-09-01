@@ -13,7 +13,7 @@ var spawn = require('child_process').spawn;
 require('dotenv').config({silent: true});
 
 var server = require('./app');
-var port = process.env.PORT || process.env.VCAP_APP_PORT || 3000;
+var port = process.env.PORT || process.env.VCAP_APP_PORT || 4701;
 
 var toclose = server.listen(port, function() {
   console.log('Server running on port: %d', port);

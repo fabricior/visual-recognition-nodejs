@@ -311,7 +311,7 @@ class UpdateForm extends React.Component {
     if (newState.showFlash) {
       setTimeout(function () {
         this.setState({showFlash: false});
-      }.bind(this), 3000);
+      }.bind(this), 4701);
     }
   }
   componentWillUnmount() {

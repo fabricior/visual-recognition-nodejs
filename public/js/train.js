@@ -400,7 +400,7 @@ $(document).ready(function() {
     $('.train--trained-successfully').addClass('showing');
     setTimeout(function() {
       $('.train--trained-successfully').removeClass('showing');
-    }, 3000);
+    }, 4701);
   }
 
   function uploadBundledClass() {
